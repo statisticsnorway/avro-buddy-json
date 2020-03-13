@@ -4,7 +4,7 @@ JSON -> GenericRecord
 
 Depending on [avro-buddy-core](https://github.com/statisticsnorway/avro-buddy-core)
 
-## Add dependency
+## Maven coordinates
 
 ```xml
 <dependency>
@@ -17,5 +17,18 @@ Depending on [avro-buddy-core](https://github.com/statisticsnorway/avro-buddy-co
 ## Usage
 
 ```java
- ToGenericRecord.from(json, avroSchema);
+  ToGenericRecord.from(json, avroSchema);
+```
+
+For more usage examples, have a look at the [tests](https://github.com/statisticsnorway/avro-buddy-json/tree/master/src/test/java/no/ssb/avro/convert/json).
+
+
+## Development
+
+From the CLI, run `make help` to see common development commands.
+
+```
+build-mvn                      Build the project and install to you local maven repo
+release-dryrun                 Simulate a release in order to detect any issues
+release                        Release a new version. Update POMs and tag the new version in git.
 ```
