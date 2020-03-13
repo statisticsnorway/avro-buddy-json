@@ -16,7 +16,7 @@ public class ToGenericRecord {
 
     /**
      * Convert JSON -> GenericRecord
-     *
+     * <p>
      * The JSON document must adhere to the supplied avro schema.
      */
     public static GenericRecord from(String json, Schema schema) {
@@ -25,7 +25,7 @@ public class ToGenericRecord {
 
     /**
      * Convert JSON -> GenericRecord
-     *
+     * <p>
      * The JSON document must adhere to the supplied avro schema.
      */
     public static GenericRecord from(byte[] json, Schema schema) {

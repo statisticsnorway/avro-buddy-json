@@ -1,6 +1,5 @@
 package no.ssb.avro.convert.json;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericRecord;
 import org.junit.jupiter.api.Test;

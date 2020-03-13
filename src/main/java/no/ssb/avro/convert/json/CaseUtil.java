@@ -8,15 +8,14 @@ public class CaseUtil {
     public static String toCamelCase(String s) {
         if (s == null) {
             return null;
-        }
-        else if (s.isBlank()) {
+        } else if (s.isBlank()) {
             return "";
         }
 
         return decapitaliseFirstLetter(
           String.join("", Arrays.stream(s.split("[-_\\s]"))
-          .map(CaseUtil::capitaliseFirstLetter)
-          .collect(Collectors.toList()))
+            .map(CaseUtil::capitaliseFirstLetter)
+            .collect(Collectors.toList()))
         );
     }
 
