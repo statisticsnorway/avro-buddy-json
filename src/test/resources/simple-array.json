@@ -1,0 +1,10 @@
+[
+  {
+    "someString": "Hey ho",
+    "someInt": 42
+  },
+  {
+    "someString": "Captain Joe",
+    "someInt": 13
+  }
+]

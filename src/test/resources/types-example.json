@@ -1,0 +1,15 @@
+{
+  "someString": "Hey ho",
+  "someInt": 42,
+  "someBoolean": true,
+  "someEnum": "SOME_ENUM_VALUE1",
+  "someObject": {"someString2":  "Captain Jack"},
+  "someArray": ["one", "two", "three"],
+  "someMap": {
+    "key1": "val1",
+    "key2": 42,
+    "key3": true
+  },
+  "someEmptyArray": [],
+  "someNull": null
+}

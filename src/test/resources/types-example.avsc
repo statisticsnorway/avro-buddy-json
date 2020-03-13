@@ -1,0 +1,75 @@
+{
+  "type": "record",
+  "name": "root",
+  "fields": [
+    {
+      "type": "string",
+      "name": "someString"
+    },
+    {
+      "type": "int",
+      "name": "someInt"
+    },
+    {
+      "type": "boolean",
+      "name": "someBoolean"
+    },
+    {
+      "name": "someEnum",
+      "type": {
+        "type": "enum",
+        "name": "someEnumType",
+        "symbols": [
+          "SOME_ENUM_VALUE1",
+          "SOME_ENUM_VALUE2"
+        ]
+      }
+    },
+    {
+      "name": "someObject",
+      "type": {
+        "type": "record",
+        "name": "someObjectType",
+        "fields": [
+          {
+            "name": "someString2",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "someMap",
+      "type": {
+        "type": "map",
+        "values": [ "string", "int", "long", "float", "double", "boolean" ]
+      }
+    },
+    {
+      "name": "someArray",
+      "type": {
+        "type": "array",
+        "name": "someArrayType",
+        "items": "string"
+      }
+    },
+    {
+      "name": "someEmptyArray",
+      "type": {
+        "type": "array",
+        "name": "someArrayType",
+        "items": "string"
+      }
+    },
+    {
+      "name": "someNull",
+      "type": ["null", "string"]
+    }
+
+  ]
+}
+
+
+
+
+

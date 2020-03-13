@@ -1,0 +1,51 @@
+{
+  "type": "record",
+  "name": "manifest",
+  "fields": [
+    {
+      "name": "manifestItems",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "manifestItem",
+          "fields": [
+            {
+              "type": {
+                "type": "map",
+                "values": [ "string", "int", "long", "float", "double", "boolean" ]
+              },
+              "name": "metadata"
+            },
+            {
+              "name": "httpInfo",
+              "type": {
+                "type": "record",
+                "name": "httpInfo",
+                "fields": [
+                  {
+                    "name": "requestHeaders",
+                    "type": {
+                      "type": "map",
+                      "values": [ "string", "int", "long", "float", "double", "boolean" ]
+                    }
+                  },
+                  {
+                    "name": "responseHeaders",
+                    "type": {
+                      "type": "map",
+                      "values": [ "string", "int", "long", "float", "double", "boolean" ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
+
+
+

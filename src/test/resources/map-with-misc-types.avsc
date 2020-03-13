@@ -1,0 +1,16 @@
+{
+  "type": "record",
+  "name": "root",
+  "fields": [
+    {
+      "type": {
+        "type": "map",
+        "values": ["string", "int"]
+      },
+      "name": "someMap"
+    }
+  ]
+}
+
+
+

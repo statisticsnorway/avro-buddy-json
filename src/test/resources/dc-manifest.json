@@ -1,0 +1,60 @@
+[
+  {
+    "metadata": {
+      "resource-type": "entry",
+      "correlation-id": "",
+      "url": "https://api-at.sits.no/api/formueinntekt/skattemelding/utkast/hendelser/?fraSekvensnummer=1&antall=100",
+      "topic": "sirius-person-utkast",
+      "position": "1",
+      "content-key": "entry",
+      "content-type": "application/xml;charset=UTF-8",
+      "content-length": 186,
+      "request-duration-nano-time": 283
+    },
+    "http-info": {
+      "request-headers": {
+        "accept": "application/xml"
+      },
+      "response-headers": {
+        "cache-control": "private",
+        "connection": "close",
+        "content-type": "application/xml;charset=UTF-8",
+        "date": "Fri, 28 Feb 2020 14:33:49 GMT",
+        "expires": "Thu, 01 Dec 1994 16:00:00 GMT",
+        "korrelasjonsid": "ee9ad432-51d6-39c4-3afe-28ab802c6a75",
+        "set-cookie": "7215bd416b7eca4e885e0facd430b342=5a44e8d9c02d1db372267ffaff2e1469; path=/; HttpOnly;Secure,MRHSession=c9daf66d7ae009a65e1fed01e14a653e;path=/;secure",
+        "strict-transport-security": "max-age=16070400; includeSubDomains",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding, User-Agent"
+      }
+    }
+  },
+  {
+    "metadata": {
+      "resource-type": "document",
+      "correlation-id": "",
+      "url": "https://api-at.sits.no/api/formueinntekt/skattemelding/utkast/ssb/2018/12345678901",
+      "topic": "sirius-person-utkast",
+      "position": "1",
+      "content-key": "skattemelding",
+      "content-type": "application/xml;charset=UTF-8",
+      "content-length": 658,
+      "request-duration-nano-time": 464
+    },
+    "http-info": {
+      "request-headers": {
+        "accept": "application/xml"
+      },
+      "response-headers": {
+        "cache-control": "private",
+        "content-type": "application/xml;charset=UTF-8",
+        "date": "Fri, 28 Feb 2020 14:33:50 GMT",
+        "expires": "Thu, 01 Dec 1994 16:00:00 GMT",
+        "korrelasjonsid": "18ac3ced-3b22-0acb-61c5-6d17eec831a7",
+        "set-cookie": "efd51c3de3e16374987ca1acc6fec5af=e9cf7a7f4c53f1d99b009c164f474217; path=/; HttpOnly;Secure,MRHSession=5c498724fd4360418a95ff1df4d50926;path=/;secure",
+        "strict-transport-security": "max-age=16070400; includeSubDomains",
+        "transfer-encoding": "chunked"
+      }
+    }
+  }
+]

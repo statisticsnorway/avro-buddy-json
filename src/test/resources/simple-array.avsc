@@ -1,0 +1,29 @@
+{
+  "type": "record",
+  "name": "root",
+  "fields": [
+    {
+      "name": "rootItems",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "simple",
+          "fields": [
+            {
+              "name": "someString",
+              "type": "string"
+            },
+            {
+              "name": "someInt",
+              "type": "int"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
+
+
+

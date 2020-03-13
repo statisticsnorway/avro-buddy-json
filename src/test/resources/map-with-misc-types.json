@@ -1,0 +1,9 @@
+{
+  "someMap": {
+    "kebab-prop": "kebab1",
+    "snake_prop": "snake1",
+    "PascalProp": "pascal1",
+    "camelCasedProp": "camel1",
+    "intProp": 42
+  }
+}

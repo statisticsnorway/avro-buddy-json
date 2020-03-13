@@ -1,0 +1,6 @@
+{
+  "kebab-prop": "kebab",
+  "snake_prop": "snake",
+  "PascalProp": "pascal",
+  "camelCasedProp": "camel"
+}

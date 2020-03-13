@@ -1,0 +1,22 @@
+{
+  "type": "record",
+  "name": "simple",
+  "fields": [
+    {
+      "name": "kebabProp",
+      "type": "string"
+    },
+    {
+      "name": "snakeProp",
+      "type": "string"
+    },
+    {
+      "name": "pascalProp",
+      "type": "string"
+    },
+    {
+      "name": "camelCasedProp",
+      "type": "string"
+    }
+  ]
+}
