@@ -1,3 +1,5 @@
+[![Build Status](https://drone.prod-bip-ci.ssb.no/api/badges/statisticsnorway/avro-buddy-json/status.svg)](https://drone.prod-bip-ci.ssb.no/statisticsnorway/avro-buddy-json)
+
 # avro-buddy-json
 
 JSON -> GenericRecord  
