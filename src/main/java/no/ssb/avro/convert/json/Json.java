@@ -1,5 +1,6 @@
 package no.ssb.avro.convert.json;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -7,10 +8,18 @@ import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.databind.node.TextNode;
+import com.fasterxml.jackson.databind.ser.FilterProvider;
+import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
+import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 public class Json {
@@ -131,4 +140,28 @@ public class Json {
         return new String(withWrappedRootArray(json.getBytes(StandardCharsets.UTF_8), rootElementName));
     }
 
+    /**
+     * Remove given named properties from a JSON structure
+     */
+    public static byte[] withScrambledProps(byte[] json, String... excludedProps) {
+        try {
+            JsonNode jsonNode = OBJECT_MAPPER.readTree(json);
+            for (String excludedProp : excludedProps) {
+                jsonNode.findParents(excludedProp)
+                  .forEach(n -> ((ObjectNode) n).replace(excludedProp, new TextNode("***")));
+            }
+            return OBJECT_MAPPER.writeValueAsBytes(jsonNode);
+
+
+        } catch (Exception e) {
+            throw new JsonException("Error writing JSON with ignored fields " + Arrays.asList(excludedProps), e);
+        }
+    }
+
+    /**
+     * Remove given named properties from a JSON structure
+     */
+    public static String withScrambledProps(String json, String... excludedProps) {
+        return new String(withScrambledProps(json.getBytes(StandardCharsets.UTF_8), excludedProps));
+    }
 }

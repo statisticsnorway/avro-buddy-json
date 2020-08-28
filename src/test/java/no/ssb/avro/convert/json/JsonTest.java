@@ -12,6 +12,7 @@ import org.skyscreamer.jsonassert.JSONCompareMode;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -113,6 +114,41 @@ class JsonTest {
         String actualJson = Json.withWrappedRootArray(inputJson, "root");
 
         JSONAssert.assertEquals(expectedJson, actualJson, true);
+    }
+
+    @Test
+    void jsonWithPropsToScramble_withExcludedProps_shouldRemoveProps() throws Exception {
+        String inputJson =
+          ("{" +
+              "'prop1': 'val1'," +
+              "'prop2': 'val2'," +
+              "'prop3': 'val3'," +
+             "'level2': {" +
+               "'prop1': 'val4'," +
+               "'prop2': 'val5'," +
+               "'level3': {" +
+                 "'prop1': 'val6'" +
+               "}" +
+             "}" +
+          "}").replaceAll("'", "\"");
+
+        String expectedJson =
+          ("{" +
+            "'prop1': '***'," +
+            "'prop2': 'val2'," +
+            "'prop3': '***'," +
+            "'level2': {" +
+            "'prop1': '***'," +
+            "'prop2': 'val5'," +
+            "'level3': {" +
+            "'prop1': '***'" +
+            "}" +
+            "}" +
+            "}").replaceAll("'", "\"");
+
+        String actualJson = Json.withScrambledProps(inputJson, "prop1", "prop3");
+        System.out.println(actualJson);
+        JSONAssert.assertEquals(expectedJson, actualJson, JSONCompareMode.LENIENT);
     }
 
 }
