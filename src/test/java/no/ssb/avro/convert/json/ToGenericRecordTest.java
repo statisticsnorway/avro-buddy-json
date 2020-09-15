@@ -2,6 +2,7 @@ package no.ssb.avro.convert.json;
 
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericRecord;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -37,6 +38,18 @@ class ToGenericRecordTest {
         json = Json.withWrappedRootArray(json, "manifestItems");
 
         GenericRecord rec = ToGenericRecord.from(json, schema(scenario + ".avsc"));
+    }
+
+    /**
+     * Requires test data (remabong.json) before running
+     */
+    @Test
+    @Disabled
+    public void json_convertComplexJsonToGenericRecord() throws Exception {
+        String scenario = "bong";
+        Schema avroSchema = schema(scenario + ".avsc");
+        JsonSettings jsonSettings = new JsonSettings().enforceCamelCasedKeys(false);
+        GenericRecord rec = ToGenericRecord.from(json(scenario + ".json"), avroSchema, jsonSettings);
     }
 
 }

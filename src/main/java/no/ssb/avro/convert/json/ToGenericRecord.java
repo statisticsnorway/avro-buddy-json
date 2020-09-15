@@ -28,12 +28,32 @@ public class ToGenericRecord {
      * <p>
      * The JSON document must adhere to the supplied avro schema.
      */
+    public static GenericRecord from(String json, Schema schema, JsonSettings jsonSettings) {
+        return from(json.getBytes(StandardCharsets.UTF_8), schema, jsonSettings);
+    }
+
+    /**
+     * Convert JSON -> GenericRecord
+     * <p>
+     * The JSON document must adhere to the supplied avro schema.
+     */
     public static GenericRecord from(byte[] json, Schema schema) {
+        return from(json, schema, new JsonSettings());
+    }
+
+    /**
+     * Convert JSON -> GenericRecord
+     * <p>
+     * The JSON document must adhere to the supplied avro schema.
+     */
+    public static GenericRecord from(byte[] json, Schema schema, JsonSettings jsonSettings) {
         String arrayRootElement = arrayRootElementOf(schema).orElse(null);
         if (arrayRootElement != null) {
             json = withWrappedRootArray(json, arrayRootElement);
         }
-        json = withCamelCasedKeys(json);
+        if (jsonSettings.enforceCamelCasedKeys()) {
+            json = withCamelCasedKeys(json);
+        }
         return json2Avro.convertToGenericDataRecord(json, schema);
     }
 

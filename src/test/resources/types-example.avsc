@@ -32,8 +32,9 @@
         "name": "someObjectType",
         "fields": [
           {
-            "name": "someString2",
-            "type": "string"
+            "name": "someString",
+            "type": ["null", "string"],
+            "default": null
           }
         ]
       }
