@@ -25,7 +25,8 @@ class ToGenericRecordTest {
       "simple-array",
       "funky-key-casing",
       "map-with-misc-types",
-      "types-example"
+      "types-example",
+      "enhetsregisteret"
     })
     public void json_convertToGenericRecord(String scenario) throws Exception {
         ToGenericRecord.from(json(scenario + ".json"), schema(scenario + ".avsc"));
@@ -51,5 +52,4 @@ class ToGenericRecordTest {
         JsonSettings jsonSettings = new JsonSettings().enforceCamelCasedKeys(false);
         GenericRecord rec = ToGenericRecord.from(json(scenario + ".json"), avroSchema, jsonSettings);
     }
-
 }
