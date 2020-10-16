@@ -1,0 +1,29 @@
+[
+  {
+    "organisasjonsnummer" : "920162665",
+    "navn" : "VELFAC",
+    "organisasjonsform" : {
+      "kode" : "UTLA",
+      "beskrivelse" : "Utenlandsk enhet",
+      "links" : [ ]
+    },
+    "registreringsdatoEnhetsregisteret" : "2017-12-21",
+    "registrertIMvaregisteret" : false,
+    "antallAnsatte" : 0,
+    "forretningsadresse" : {
+      "land" : "Danmark",
+      "landkode" : "DK",
+      "poststed" : "DK-8700 HORSENS",
+      "adresse" : [ "Bygholm Søpark 23" ]
+    },
+    "stiftelsesdato" : "1969-09-29",
+    "registrertIForetaksregisteret" : false,
+    "registrertIStiftelsesregisteret" : false,
+    "registrertIFrivillighetsregisteret" : false,
+    "konkurs" : false,
+    "underAvvikling" : false,
+    "underTvangsavviklingEllerTvangsopplosning" : false,
+    "maalform" : "Bokmål",
+    "links" : [ ]
+  }
+]
